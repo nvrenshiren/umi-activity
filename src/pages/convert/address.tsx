@@ -8,6 +8,9 @@ import { router } from 'umi'
 import convertService from '@/service/convert.service'
 import modalBox from '@/components/util/modal.box'
 import { UtilToast } from '@/components/util/util.toast'
+import AddressSelect from '@/components/convert/address.select'
+import addressData from '@/components/convert/address.data'
+
 interface Props {}
 interface State {
   userName: string
@@ -101,7 +104,25 @@ export default class ConvertAddress extends React.PureComponent<Props, State> {
                 style: inputStyle
               }}
             />
-            <TextField
+            <AddressSelect
+              default={address}
+              data={addressData}
+              onChange={(data) => {
+                this.setState(
+                  {
+                    address: data
+                      .map((item) => {
+                        return item.text
+                      })
+                      .join('-')
+                  },
+                  () => {
+                    console.log(this.state.address)
+                  }
+                )
+              }}
+            />
+            {/* <TextField
               label="所在地区"
               onChange={(e) => {
                 this.setState({
@@ -119,7 +140,7 @@ export default class ConvertAddress extends React.PureComponent<Props, State> {
               inputProps={{
                 style: inputStyle
               }}
-            />
+            /> */}
             <TextField
               label="详细地址"
               onChange={(e) => {

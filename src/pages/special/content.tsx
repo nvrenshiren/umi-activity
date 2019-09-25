@@ -71,6 +71,7 @@ export default class SpecialList extends React.PureComponent<{}, State> {
                 <Box mr={2}>{this.state.content.commentCount}评论</Box>
               </FontSizeBox>
               <FontSizeBox
+                id="contentBox"
                 viewSize={36}
                 lineHeight={1.5}
                 dangerouslySetInnerHTML={{ __html: this.state.content.txt }}
