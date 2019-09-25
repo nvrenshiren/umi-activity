@@ -1,0 +1,86 @@
+@import './statics/sprites.css';
+
+html,
+body,
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+img {
+  vertical-align: top;
+}
+* {
+  user-select: none;
+  outline: none;
+}
+input,
+textarea,
+select,
+option,
+form {
+  user-select: auto !important;
+}
+ol {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.full {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+.pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes rowup {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, -307px, 0);
+    transform: translate3d(0, -307px, 0);
+    display: none;
+  }
+}
+.scrollQueen {
+  .scrollList {
+    -webkit-animation: 15s rowup linear infinite normal;
+    animation: 15s rowup linear infinite normal;
+    position: relative;
+  }
+}
